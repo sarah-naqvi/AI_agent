@@ -1,21 +1,27 @@
 # AI Agent - LangGraph ReAct Agent API
 
-A production-ready AI agent built with LangGraph and LangChain that provides intelligent query processing through a FastAPI REST interface. The agent leverages multiple tools including web search, mathematical calculations, RAG (Retrieval-Augmented Generation), and custom API integrations to provide comprehensive and accurate responses.
+A **production-ready AI agent** built with **LangGraph** and **LangChain** that provides intelligent query processing through a **FastAPI REST interface**.
 
-## Features
+The agent functions like a small AI brain which includes : 
+- Search the web in real-time
+- Perform complex maths
+- RAG (Retrieval-Augmented Generation)
+- Even connect to your own custom APIs
+
+## Features at a Glance
 
 - **🤖 ReAct Agent Architecture**: Implements the ReAct (Reasoning and Acting) pattern using LangGraph for improved decision-making
-- **🔍 Web Search Integration**: Real-time web searches powered by SerpAPI
+- **🔍 Web Search Integration**: Live results powered by SerpAPI
 - **🧮 Mathematical Calculations**: Built-in calculator for complex mathematical expressions
 - **📚 RAG Capability**: Vector-based document retrieval using Chroma DB for knowledge base queries
 - **🔌 Custom API Integration**: Extensible tool for integrating external APIs
 - **🔐 API Key Authentication**: Secure endpoint access with API key validation
 - **⚡ Rate Limiting**: Token bucket-based rate limiting to prevent abuse
 - **🔄 Resilient Execution**: Automatic retry mechanism with exponential backoff
-- **📊 Logging**: Comprehensive logging for monitoring and debugging
+- **📊 Logging + Monitoring**: Easy debugging and transparency
 - **💾 Persistent Vector Store**: ChromaDB for efficient document storage and retrieval
 
-## Architecture
+## Project Architecture
 
 The application follows a modular architecture:
 
@@ -60,7 +66,9 @@ The application follows a modular architecture:
 - SerpAPI key (for web search functionality)
 - (Optional) Custom API endpoint for external integrations
 
-## Installation
+## Setup Guide 
+
+If this is your **first time** , don't worry - just follow the steps :
 
 1. **Clone the repository**
    ```bash
@@ -200,6 +208,7 @@ The agent has access to the following tools:
 - **Function**: `web_search_tool(query: str)`
 - **Purpose**: Performs real-time web searches using SerpAPI
 - **Use Case**: Fetching current information, news, or any web-based data
+- **Example**: `"Who are the members of the United Nations(UN)?`
 
 ### 2. Calculator Tool
 - **Function**: `calculator_tool(expr: str)`
@@ -217,8 +226,9 @@ The agent has access to the following tools:
 
 ### 4. Custom API Tool
 - **Function**: `custom_api_tool(payload: str)`
-- **Purpose**: Integrates with external APIs
+- **Purpose**: Integrates with your own APIs
 - **Use Case**: Extending functionality with custom integrations
+- **Example**: `"Send user data to my service."`
 - **Configuration**: Set `CUSTOM_API_URL` in `.env`
 
 ## Development
@@ -340,7 +350,8 @@ Log levels:
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
+Licensed under the **GNU General Public License v3.0**
+See the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
